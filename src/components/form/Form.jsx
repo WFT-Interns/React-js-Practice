@@ -3,6 +3,7 @@ import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TextField, Button } from '@mui/material';
 
+
 const Form = () => {
     const navigate=useNavigate();
     const [username, setUsername] = useState('');
@@ -33,16 +34,16 @@ const Form = () => {
       <div className='containers'>
       <form onSubmit={handleSubmit}>
         <div>
-          <TextField sx={{ marginLeft: 65}}  label="Username" type="text" value={username} onChange={handleUsernameChange} />
+          <TextField size='small' sx={{ marginLeft: 65}}  label="Username" type="text" value={username} onChange={handleUsernameChange} />
         </div>
         <div>
-          <TextField sx={{ marginLeft: 65,marginTop:3}} label="Password" type="password" value={password} onChange={handlePasswordChange} />
+          <TextField size='small' sx={{ marginLeft: 65,marginTop:3}} label="Password" type="password" value={password} onChange={handlePasswordChange} />
         </div>
         <br></br>
         <div className='Button'>
-        <Button sx={{ marginRight: 2 ,marginLeft: 60,border: '2px solid black'}} variant='contained' color='primary' type='submit' >Login</Button>
-        <Button sx={{ marginRight: 2 ,border: '2px solid black'}} variant='contained' color='primary' type='submit'  onClick={handleClear}>Clear</Button>
-        <Button sx={{ marginRight: 2 ,border: '2px solid black'}}  variant='contained' color='primary' type='button' onClick={()=>navigate("/nextpage")}>Next-Page</Button>
+        <Button sx={{ marginRight: 2 ,marginLeft: 65,border: '2px solid black'}} size='small' variant='contained' color='primary' type='submit' >Login</Button>
+        <Button sx={{ marginRight: 2 ,border: '2px solid black'}} size='small' variant='contained' color='primary' type='submit'  onClick={handleClear}>Clear</Button>
+        <Button sx={{ marginRight: 2 ,border: '2px solid black'}} size='small' variant='contained' color='primary' type='button' onClick={()=>navigate("/nextpage")}>Next-Page</Button>
         </div>
         {submitted && (
           <div>
@@ -51,7 +52,6 @@ const Form = () => {
           </div>
         )}
       </form>
-      
       </div>
       </>
       
