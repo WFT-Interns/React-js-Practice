@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { QueryClient, QueryClientProvider } from "react-query";
+import Homepage from './Pages/Home/Homepage';
+import LoginPage from './Pages/Login/LoginPage';
+import TestPage from './Pages/Tests/TestPage1';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import TestPage2 from './Pages/Tests/TestPage2';
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    }
+  }
+});
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+     <Router>
+        <Routes>
+          <Route path="/" element={<Homepage/>}/>
+          <Route path="/loginpage" element={<LoginPage />} />
+          <Route path="/nextpage" element={<TestPage/>} />
+          <Route path="/nextdata" element={<TestPage2/>} />
+        </Routes>
+      </Router>
     </div>
+    </QueryClientProvider>
   );
 }
 
