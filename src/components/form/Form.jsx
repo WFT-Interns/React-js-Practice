@@ -15,7 +15,6 @@ const Form = () => {
     const handlePasswordChange = (event) => {
       setPassword(event.target.value);
     }
-  
     const handleSubmit = (event) => {
       event.preventDefault();
       console.log(`Username: ${username}, Password: ${password}`);
@@ -25,7 +24,6 @@ const Form = () => {
       setUsername('');
       setPassword('');
     }
-  
     return (
       <>
       <h1>Login Page</h1>
